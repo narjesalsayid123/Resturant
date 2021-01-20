@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="nnn" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\nnn.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="Resturant.Properties.Settings" SettingsPropertyName="nnnConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.copon" Member="copons">
+    <Type Name="copon">
+      <Column Name="Id_copon" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[discount ]" Member="discount_" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.roles" Member="roles">
+    <Type Name="role">
+      <Column Name="id_job" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_employee" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="work_hours" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="workdays" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="holidays" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="job_name" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Association Name="role_employee" Member="employees" ThisKey="id_job" OtherKey="job_id" Type="employee" />
+    </Type>
+  </Table>
+  <Table Name="dbo.customer" Member="customers">
+    <Type Name="customer">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="birthday" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="name1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="name2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="resturant_seating" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="telephone" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="customer_orders" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[user_name ]" Member="user_name_" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="customer_order" Member="orders" ThisKey="Id" OtherKey="customer_id" Type="order" />
+    </Type>
+  </Table>
+  <Table Name="dbo.days" Member="days">
+    <Type Name="day">
+      <Column Name="Id_day" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="day" Member="day1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="id_resturant" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="resturant_day" Member="resturant" ThisKey="id_resturant" OtherKey="id_resturant" Type="resturant" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.employees" Member="employees">
+    <Type Name="employee">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="salary" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="nameone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="nametwo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="job_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="phone_number" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="user_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="id_resturant" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="role_employee" Member="role" ThisKey="job_id" OtherKey="id_job" Type="role" IsForeignKey="true" />
+      <Association Name="resturant_employee" Member="resturant" ThisKey="id_resturant" OtherKey="id_resturant" Type="resturant" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.menu" Member="menus">
+    <Type Name="menu">
+      <Column Name="id_menu" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="start_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="end_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="id_food" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="name_menu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[order]" Member="orders">
+    <Type Name="order">
+      <Column Name="order_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="order_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="customer_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pick_up_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="payment_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="number_invoice" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="order_food" Member="foods" ThisKey="order_id" OtherKey="id_order" Type="food" />
+      <Association Name="customer_order" Member="customer" ThisKey="customer_id" OtherKey="Id" Type="customer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.resturant" Member="resturants">
+    <Type Name="resturant">
+      <Column Name="id_resturant" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_employee" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="discription" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="is_active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="copon" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="work_day_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="resturant_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="menu_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="resturant_day" Member="days" ThisKey="id_resturant" OtherKey="id_resturant" Type="day" />
+      <Association Name="resturant_employee" Member="employees" ThisKey="id_resturant" OtherKey="id_resturant" Type="employee" />
+    </Type>
+  </Table>
+  <Table Name="dbo.food" Member="foods">
+    <Type Name="food">
+      <Column Name="id_menu" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="food_calories" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="meal_price" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="meal_size" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="weight_meal" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="meal_kind" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="number_meal" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="id_order" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="order_food" Member="order" ThisKey="id_order" OtherKey="order_id" Type="order" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
