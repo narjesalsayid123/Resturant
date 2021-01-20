@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace Resturant
 {
-    public partial class menu : Form
+    public partial class place : Form
     {
-        public menu()
+        public place()
         {
             InitializeComponent();
-        }
-
-        private void menu_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

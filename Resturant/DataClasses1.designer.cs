@@ -45,9 +45,9 @@ namespace Resturant
     partial void Insertemployee(employee instance);
     partial void Updateemployee(employee instance);
     partial void Deleteemployee(employee instance);
-    partial void Insertmenu(menu instance);
-    partial void Updatemenu(menu instance);
-    partial void Deletemenu(menu instance);
+    partial void Insertmenu(MENU instance);
+    partial void Updatemenu(MENU instance);
+    partial void Deletemenu(MENU instance);
     partial void Insertorder(order instance);
     partial void Updateorder(order instance);
     partial void Deleteorder(order instance);
@@ -129,11 +129,11 @@ namespace Resturant
 			}
 		}
 		
-		public System.Data.Linq.Table<menu> menus
+		public System.Data.Linq.Table<MENU> menus
 		{
 			get
 			{
-				return this.GetTable<menu>();
+				return this.GetTable<MENU>();
 			}
 		}
 		
@@ -1228,7 +1228,7 @@ namespace Resturant
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.menu")]
-	public partial class menu : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class MENU : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -1259,7 +1259,7 @@ namespace Resturant
     partial void Onname_menuChanged();
     #endregion
 		
-		public menu()
+		public MENU()
 		{
 			OnCreated();
 		}

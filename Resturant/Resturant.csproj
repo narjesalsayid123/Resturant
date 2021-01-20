@@ -100,8 +100,11 @@
     <Compile Include="foods.Designer.cs">
       <DependentUpon>foods.cs</DependentUpon>
     </Compile>
-    <Compile Include="food_categorea.cs">
+    <Compile Include="food_list.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="food_list.Designer.cs">
+      <DependentUpon>food_list.cs</DependentUpon>
     </Compile>
     <Compile Include="home.cs">
       <SubType>Form</SubType>
@@ -115,20 +118,14 @@
     <Compile Include="Form4.Designer.cs">
       <DependentUpon>Form4.cs</DependentUpon>
     </Compile>
-    <Compile Include="menu.cs">
+    <Compile Include="place.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="menu.Designer.cs">
-      <DependentUpon>menu.cs</DependentUpon>
+    <Compile Include="place.Designer.cs">
+      <DependentUpon>place.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="resturant.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="resturant.Designer.cs">
-      <DependentUpon>resturant.cs</DependentUpon>
-    </Compile>
     <Compile Include="resturant_employees.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,12 +144,6 @@
     <Compile Include="signin.Designer.cs">
       <DependentUpon>signin.cs</DependentUpon>
     </Compile>
-    <Compile Include="sign_in.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="sign_in.Designer.cs">
-      <DependentUpon>sign_in.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="customers.resx">
       <DependentUpon>customers.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,8 +156,8 @@
     <EmbeddedResource Include="foods.resx">
       <DependentUpon>foods.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="food_categorea.resx">
-      <DependentUpon>food_categorea.cs</DependentUpon>
+    <EmbeddedResource Include="food_list.resx">
+      <DependentUpon>food_list.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="home.resx">
       <DependentUpon>home.cs</DependentUpon>
@@ -174,8 +165,8 @@
     <EmbeddedResource Include="Form4.resx">
       <DependentUpon>Form4.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="menu.resx">
-      <DependentUpon>menu.cs</DependentUpon>
+    <EmbeddedResource Include="place.resx">
+      <DependentUpon>place.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -186,9 +177,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="resturant.resx">
-      <DependentUpon>resturant.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="resturant_employees.resx">
       <DependentUpon>resturant_employees.cs</DependentUpon>
     </EmbeddedResource>

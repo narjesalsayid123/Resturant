@@ -1,0 +1,5 @@
+﻿Build started...
+1>------ Build started: Project: Resturant, Configuration: Debug Any CPU ------
+1>C:\Resturant\Resturant\resturant.cs(15,16,15,25): error CS0111: Type 'resturant' already defines a member called 'resturant' with the same parameter types
+1>C:\Resturant\Resturant\MENU.cs(15,16,15,20): error CS0111: Type 'MENU' already defines a member called 'MENU' with the same parameter types
+========== Build: 0 succeeded, 1 failed, 0 up-to-date, 0 skipped ==========

@@ -46,8 +46,8 @@ namespace Resturant
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FORM_CATEGOREA s = new FORM_CATEGOREA();
-            s.ShowDialog();        }
+            
+                  }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {

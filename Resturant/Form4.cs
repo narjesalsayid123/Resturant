@@ -20,9 +20,9 @@ namespace Resturant
         }
         private void fill()
         {
-            this.dataGridView3.DataSource = con.select_jobs();
-            var a = con.select_jobs().ToArray();
-            MessageBox.Show(a[0].salary.ToString());
+            
+            
+           
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
